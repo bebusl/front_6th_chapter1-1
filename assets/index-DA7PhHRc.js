@@ -1,4 +1,4 @@
-(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e){if(t.type!==`childList`)continue;for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();const e=`modulepreload`,t=function(e){return`/front_6th_chapter1-1/`+e},n={},r=function(r,i,a){let o=Promise.resolve();if(i&&i.length>0){let r=document.getElementsByTagName(`link`),s=document.querySelector(`meta[property=csp-nonce]`),c=s?.nonce||s?.getAttribute(`nonce`);function l(e){return Promise.all(e.map(e=>Promise.resolve(e).then(e=>({status:`fulfilled`,value:e}),e=>({status:`rejected`,reason:e}))))}o=l(i.map(i=>{if(i=t(i,a),i in n)return;n[i]=!0;let o=i.endsWith(`.css`),s=o?`[rel="stylesheet"]`:``,l=!!a;if(l)for(let e=r.length-1;e>=0;e--){let t=r[e];if(t.href===i&&(!o||t.rel===`stylesheet`))return}else if(document.querySelector(`link[href="${i}"]${s}`))return;let u=document.createElement(`link`);if(u.rel=o?`stylesheet`:e,o||(u.as=`script`),u.crossOrigin=``,u.href=i,c&&u.setAttribute(`nonce`,c),document.head.appendChild(u),o)return new Promise((e,t)=>{u.addEventListener(`load`,e),u.addEventListener(`error`,()=>t(Error(`Unable to preload CSS for ${i}`)))})}))}function s(e){let t=new Event(`vite:preloadError`,{cancelable:!0});if(t.payload=e,window.dispatchEvent(t),!t.defaultPrevented)throw e}return o.then(e=>{for(let t of e||[]){if(t.status!==`rejected`)continue;s(t.reason)}return r().catch(s)})};function i({parent:e=document.body,component:t}){let n=null,r=t;return{unmount(){n&&e.removeChild(n),n=null,r=null},render(t){if(!n)n=r(t),e.appendChild(n);else{let i=r(t);e.replaceChild(i,n),this.currentView=i}return e},updateComponent(e){return this.unmount(),r=e,this}}}const a=e=>{let t=document.createElement(`template`);return t.innerHTML=e,t.content.firstElementChild};function o(){let e=i({component:a(`<p>detailpage</p>`)});e.render()}function s(e){return`
+(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e){if(t.type!==`childList`)continue;for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();const e=`modulepreload`,t=function(e){return`/front_6th_chapter1-1/`+e},n={},r=function(r,i,a){let o=Promise.resolve();if(i&&i.length>0){let r=document.getElementsByTagName(`link`),s=document.querySelector(`meta[property=csp-nonce]`),c=s?.nonce||s?.getAttribute(`nonce`);function l(e){return Promise.all(e.map(e=>Promise.resolve(e).then(e=>({status:`fulfilled`,value:e}),e=>({status:`rejected`,reason:e}))))}o=l(i.map(i=>{if(i=t(i,a),i in n)return;n[i]=!0;let o=i.endsWith(`.css`),s=o?`[rel="stylesheet"]`:``,l=!!a;if(l)for(let e=r.length-1;e>=0;e--){let t=r[e];if(t.href===i&&(!o||t.rel===`stylesheet`))return}else if(document.querySelector(`link[href="${i}"]${s}`))return;let u=document.createElement(`link`);if(u.rel=o?`stylesheet`:e,o||(u.as=`script`),u.crossOrigin=``,u.href=i,c&&u.setAttribute(`nonce`,c),document.head.appendChild(u),o)return new Promise((e,t)=>{u.addEventListener(`load`,e),u.addEventListener(`error`,()=>t(Error(`Unable to preload CSS for ${i}`)))})}))}function s(e){let t=new Event(`vite:preloadError`,{cancelable:!0});if(t.payload=e,window.dispatchEvent(t),!t.defaultPrevented)throw e}return o.then(e=>{for(let t of e||[]){if(t.status!==`rejected`)continue;s(t.reason)}return r().catch(s)})},i=import.meta.PROD?`/front_6th_chapter1-1`:``;function a({parent:e=document.body,component:t}){let n=null,r=t;return{unmount(){n&&e.removeChild(n),n=null,r=null},render(t){if(!n)n=r(t),e.appendChild(n);else{let i=r(t);e.replaceChild(i,n),this.currentView=i}return e},updateComponent(e){return this.unmount(),r=e,this}}}const o=e=>{let t=document.createElement(`template`);return t.innerHTML=e,t.content.firstElementChild};function s(){let e=a({component:o(`<p>detailpage</p>`)});e.render()}function c(e){return`
         <header class="bg-white shadow-sm sticky top-0 z-40">
         <div class="max-w-md mx-auto px-4 py-4">
           <div class="flex items-center justify-between">
@@ -19,13 +19,13 @@
           </div>
         </div>
       </header>
-    `}function c(){return`
+    `}function l(){return`
       <footer class="bg-white shadow-sm sticky top-0 z-40">
         <div class="max-w-md mx-auto py-8 text-center text-gray-500">
           <p>© 2025 항해플러스 프론트엔드 쇼핑몰</p>
         </div>
       </footer>
-    `}function l(e){return console.log(e),`
+    `}function u(e){return console.log(e),`
       <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-4">
         <!-- 검색창 -->
         <div class="mb-4">
@@ -92,7 +92,7 @@ ${e?`  <div class="space-y-2">
           </div>
         </div>
       </div>
-    `}function u(e){let t=e,n=()=>{};function r(){}function i(e){t=typeof e==`function`?e(t):e,n(t)}function a(e){n=e}return{getState:r,updateState:i,onChange:a}}const d={UPDATE_URL:`UPDATE_URL`};function f(e,t){let n=new URL(location.href);e.startsWith(`/`)?n.pathname=e:n.pathname+=e,t&&(n.searchParams=new URLSearchParams(t)),history.pushState(null,``,n),window.dispatchEvent(new CustomEvent(d.UPDATE_URL))}function p(){let e=u();return function(){window.addEventListener(d.UPDATE_URL,()=>{e.updateState(location)}),window.addEventListener(`popstate`,()=>{e.updateState(location)}),window.dispatchEvent(new CustomEvent(d.UPDATE_URL))}(),e}const m=p();function h({id:e,title:t,image:n,lprice:r,brand:i}){return`
+    `}function d(e){let t=e,n=()=>{};function r(){}function i(e){t=typeof e==`function`?e(t):e,n(t)}function a(e){n=e}return{getState:r,updateState:i,onChange:a}}const f={UPDATE_URL:`UPDATE_URL`};function p(e,t){let n=new URL(location.href);e.startsWith(`/`)?n.pathname=`${i}${e}`:n.pathname+=e,t&&(n.searchParams=new URLSearchParams(t)),history.pushState(null,``,n),window.dispatchEvent(new CustomEvent(f.UPDATE_URL))}function m(){let e=d();return function(){window.addEventListener(f.UPDATE_URL,()=>{e.updateState(location)}),window.addEventListener(`popstate`,()=>{e.updateState(location)}),window.dispatchEvent(new CustomEvent(f.UPDATE_URL))}(),e}const h=m();function g({id:e,title:t,image:n,lprice:r,brand:i}){return`
       <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden product-card"
            data-product-id="${e}">
         <div class="aspect-square bg-gray-100 overflow-hidden cursor-pointer product-image">
@@ -109,7 +109,7 @@ ${e?`  <div class="space-y-2">
           </button>
         </div>
       </div>
-    `}const g=`<div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden animate-pulse">
+    `}const _=`<div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden animate-pulse">
                 <div class="aspect-square bg-gray-200"></div>
                 <div class="p-3">
                   <div class="h-4 bg-gray-200 rounded mb-2"></div>
@@ -117,23 +117,23 @@ ${e?`  <div class="space-y-2">
                   <div class="h-5 bg-gray-200 rounded w-1/2 mb-3"></div>
                   <div class="h-8 bg-gray-200 rounded"></div>
                 </div>
-              </div>`;function _(e){return`
+              </div>`;function v(e){return`
    ${Array.isArray(e)&&e.length?`<div class="mb-4 text-sm text-gray-600">
          총 <span class="font-medium text-gray-900">340개</span>의 상품
        </div>`:``}
     <div class="grid grid-cols-2 gap-4 mb-6" id="products-grid">
-      ${Array.isArray(e)&&e.length?e.map(h).join(``):Array.from({length:10}).map(()=>g).join(``)}
+      ${Array.isArray(e)&&e.length?e.map(g).join(``):Array.from({length:10}).map(()=>_).join(``)}
     </div>
-  `}async function v(e={}){let{limit:t=20,search:n=``,category1:r=``,category2:i=``,sort:a=`price_asc`}=e,o=e.current??e.page??1,s=new URLSearchParams({page:o.toString(),limit:t.toString(),...n&&{search:n},...r&&{category1:r},...i&&{category2:i},sort:a}),c=await fetch(`/api/products?${s}`);return await c.json()}async function y(){let e=await fetch(`/api/categories`);return await e.json()}function b(){let e=i({parent:window.document.body,component:x});(async function(){try{e.render({}),parent.addEventListener(`click`,e=>{e.preventDefault(),f(`/product/1234`)});let t=await v(),n=await y();e.render({products:t.products,categories:Object.keys(n)})}catch(e){console.error(e)}})(),e.render()}function x({products:e,categories:t,cartItemNum:n=0}){console.log(`:`,e,t);let r=a(`
+  `}async function y(e={}){let{limit:t=20,search:n=``,category1:r=``,category2:i=``,sort:a=`price_asc`}=e,o=e.current??e.page??1,s=new URLSearchParams({page:o.toString(),limit:t.toString(),...n&&{search:n},...r&&{category1:r},...i&&{category2:i},sort:a}),c=await fetch(`/api/products?${s}`);return await c.json()}async function b(){let e=await fetch(`/api/categories`);return await e.json()}function x(){let e=a({parent:window.document.body,component:S});(async function(){try{e.render({}),parent.addEventListener(`click`,e=>{e.preventDefault(),p(`/product/1234`)});let t=await y(),n=await b();e.render({products:t.products,categories:Object.keys(n)})}catch(e){console.error(e)}})(),e.render()}function S({products:e,categories:t,cartItemNum:n=0}){console.log(`:`,e,t);let r=o(`
     <div class="bg-gray-50 min-h-screen">
-      ${s(n)}
+      ${c(n)}
       <main class="max-w-md mx-auto px-4 py-4">
-        ${l(t)}
-        ${_(e)}
+        ${u(t)}
+        ${v(e)}
       </main>
-      ${c()}
+      ${l()}
     </div>
-  `);return r}function S(){let e=()=>a(`
+  `);return r}function C(){let e=()=>o(`
     <div class="text-center my-4 py-20 shadow-md p-6 bg-white rounded-lg">
       <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -163,4 +163,4 @@ ${e?`  <div class="space-y-2">
       </svg>
       
       <a href="/" data-link class="inline-block px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">홈으로</a>
-    </div>`);i({component:e}).render()}const C=()=>r(async()=>{let{worker:e,workerOptions:t}=await import(`./browser-EepaDAeu.js`);return{worker:e,workerOptions:t}},[]).then(({worker:e,workerOptions:t})=>e.start(t)),w=`/front_6th_chapter1-1`;function T(){let e=[{pathname:`/`,component:b,matchPattern:`^${w}/$`},{pathname:`/product/:productId`,component:o,matchPattern:`^${w}/product/[A-Za-z0-9_-]+$`},{pathname:`*`,component:S,matchPattern:`^${w}.*$`}],t=()=>{let t=location.pathname,n=e.find(e=>{let n=new RegExp(e.matchPattern);return n.test(t)});return n?n.component:null};m.onChange(()=>{let e=t()();console.log(e)});let n=t()();console.log(n)}C().then(T);
+    </div>`);a({component:e}).render()}const w=()=>r(async()=>{let{worker:e,workerOptions:t}=await import(`./browser-EepaDAeu.js`);return{worker:e,workerOptions:t}},[]).then(({worker:e,workerOptions:t})=>e.start(t));function T(){let e=[{pathname:`/`,component:x,matchPattern:`^${i}/$`},{pathname:`/product/:productId`,component:s,matchPattern:`^${i}/product/[A-Za-z0-9_-]+$`},{pathname:`*`,component:C,matchPattern:`^${i}.*$`}],t=()=>{let t=location.pathname,n=e.find(e=>{let n=new RegExp(e.matchPattern);return n.test(t)});return n?n.component:null};h.onChange(()=>{let e=t()();console.log(e)});let n=t()();console.log(n)}w().then(T);
