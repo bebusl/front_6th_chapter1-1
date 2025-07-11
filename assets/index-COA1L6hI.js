@@ -92,7 +92,7 @@ ${e?`  <div class="space-y-2">
           </div>
         </div>
       </div>
-    `}function d(e){let t=e,n=()=>{};function r(){}function i(e){t=typeof e==`function`?e(t):e,n(t)}function a(e){n=e}return{getState:r,updateState:i,onChange:a}}const f={UPDATE_URL:`UPDATE_URL`};function p(e,t){let n=new URL(location.href);e.startsWith(`/`)?n.pathname=`${i}${e}`:n.pathname+=e,t&&(n.searchParams=new URLSearchParams(t)),history.pushState(null,``,n),window.dispatchEvent(new CustomEvent(f.UPDATE_URL))}function m(){let e=d();return function(){window.addEventListener(f.UPDATE_URL,()=>{e.updateState(location)}),window.addEventListener(`popstate`,()=>{e.updateState(location)}),window.dispatchEvent(new CustomEvent(f.UPDATE_URL))}(),e}const h=m();function g({id:e,title:t,image:n,lprice:r,brand:i}){return`
+    `}function d(e){let t=e,n=()=>{};function r(){}function i(e){t=typeof e==`function`?e(t):e,n(t)}function a(e){n=e}return{getState:r,updateState:i,onChange:a}}const f={UPDATE_URL:`UPDATE_URL`};function p(e,t){let n=new URL(`${location.href}${i}`);e.startsWith(`/`)?n.pathname=e:n.pathname+=e,t&&(n.searchParams=new URLSearchParams(t)),history.pushState(null,``,n),window.dispatchEvent(new CustomEvent(f.UPDATE_URL))}function m(){let e=d();return function(){window.addEventListener(f.UPDATE_URL,()=>{e.updateState(location)}),window.addEventListener(`popstate`,()=>{e.updateState(location)}),window.dispatchEvent(new CustomEvent(f.UPDATE_URL))}(),e}const h=m();function g({id:e,title:t,image:n,lprice:r,brand:i}){return`
       <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden product-card"
            data-product-id="${e}">
         <div class="aspect-square bg-gray-100 overflow-hidden cursor-pointer product-image">
